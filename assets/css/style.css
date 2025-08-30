@@ -1,0 +1,339 @@
+/* CSS Custom Properties (Variables) */
+:root {
+  /* Color palette - Dark theme with green accents */
+  --bg: #0b1110;
+  --fg: #e9f5ee;
+  --muted: #a7c7b5;
+  --card: #0f1614;
+  --border: #1a2a24;
+  --accent: #1fdf8f;
+  --accent-2: #0fbf6a;
+
+  /* Typography */
+  --font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
+
+  /* Shadows */
+  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+  --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+
+  /* Border radius */
+  --radius: 16px;
+  --radius-sm: 8px;
+
+  /* Transitions */
+  --transition: all 0.15s ease-in-out;
+}
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-family-sans-serif);
+  line-height: 1.6;
+}
+
+/* Bootstrap CSS Variable Overrides */
+:root {
+  --bs-body-bg: var(--bg);
+  --bs-body-color: var(--fg);
+  --bs-primary: var(--accent);
+  --bs-primary-rgb: 31, 223, 143;
+  --bs-secondary: var(--muted);
+  --bs-success: var(--accent-2);
+  --bs-dark: var(--card);
+  --bs-light: var(--fg);
+}
+
+/* Text color utilities */
+.text-accent {
+  color: var(--accent) !important;
+}
+
+.text-accent-2 {
+  color: var(--accent-2) !important;
+}
+
+.text-muted {
+  color: var(--muted) !important;
+}
+
+/* Background utilities */
+.bg-card {
+  background-color: var(--card) !important;
+}
+
+.bg-accent {
+  background-color: var(--accent) !important;
+}
+
+.bg-accent-2 {
+  background-color: var(--accent-2) !important;
+}
+
+/* Button variants */
+.btn-outline-accent {
+  --bs-btn-color: var(--accent);
+  --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-color: var(--bg);
+  --bs-btn-hover-bg: var(--accent);
+  --bs-btn-hover-border-color: var(--accent);
+  --bs-btn-focus-shadow-rgb: 31, 223, 143;
+  --bs-btn-active-color: var(--bg);
+  --bs-btn-active-bg: var(--accent);
+  --bs-btn-active-border-color: var(--accent);
+  --bs-btn-active-shadow: none;
+  --bs-btn-disabled-color: var(--accent);
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: var(--accent);
+}
+
+.btn-outline-accent-2 {
+  --bs-btn-color: var(--accent-2);
+  --bs-btn-border-color: var(--accent-2);
+  --bs-btn-hover-color: var(--bg);
+  --bs-btn-hover-bg: var(--accent-2);
+  --bs-btn-hover-border-color: var(--accent-2);
+  --bs-btn-focus-shadow-rgb: 15, 191, 106;
+  --bs-btn-active-color: var(--bg);
+  --bs-btn-active-bg: var(--accent-2);
+  --bs-btn-active-border-color: var(--accent-2);
+  --bs-btn-active-shadow: none;
+  --bs-btn-disabled-color: var(--accent-2);
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: var(--accent-2);
+}
+
+/* Hero section */
+.hero {
+  background: linear-gradient(135deg, var(--card) 0%, var(--bg) 100%);
+}
+
+.hero-illustration {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Cards */
+.card {
+  border-radius: var(--radius) !important;
+  transition: var(--transition);
+  border: 1px solid var(--border) !important;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.card-body {
+  background-color: var(--card);
+}
+
+/* Owl cards */
+.owl-card {
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.owl-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.owl-image {
+  height: 200px;
+  width: 100%;
+  object-fit: contain;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--bg) 0%, var(--card) 100%);
+}
+
+.owl-image-large {
+  max-height: 300px;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Detail page specific styles */
+.owl-hero {
+  background: linear-gradient(135deg, var(--card) 0%, var(--bg) 100%);
+}
+
+/* Audio player */
+.audio-player .btn {
+  min-width: 120px;
+}
+
+.audio-player .btn:disabled {
+  opacity: 0.6;
+}
+
+/* Navigation */
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--accent) !important;
+}
+
+.dropdown-menu-dark {
+  background-color: var(--card);
+  border-color: var(--border);
+}
+
+.dropdown-menu-dark .dropdown-item {
+  color: var(--fg);
+}
+
+.dropdown-menu-dark .dropdown-item:hover,
+.dropdown-menu-dark .dropdown-item:focus {
+  background-color: var(--bg);
+  color: var(--accent);
+}
+
+.dropdown-menu-dark .dropdown-item.active {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+/* List groups */
+.list-group-item {
+  background-color: transparent !important;
+  border-color: var(--border) !important;
+  color: var(--fg) !important;
+}
+
+.list-group-item:hover {
+  background-color: var(--bg) !important;
+  color: var(--accent) !important;
+}
+
+/* Breadcrumbs */
+.breadcrumb {
+  background-color: transparent;
+  padding: 0;
+}
+
+.breadcrumb-item a {
+  color: var(--muted);
+}
+
+.breadcrumb-item.active {
+  color: var(--accent);
+}
+
+/* Footer */
+footer {
+  background-color: var(--card) !important;
+  border-top: 1px solid var(--border);
+}
+
+/* Focus states for accessibility */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 2px !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .display-1 {
+    font-size: 3rem;
+  }
+
+  .display-4 {
+    font-size: 2rem;
+  }
+
+  .display-6 {
+    font-size: 1.5rem;
+  }
+
+  .owl-image {
+    height: 150px;
+  }
+
+  .hero-illustration {
+    margin-top: 2rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+}
+
+/* Print styles */
+@media print {
+
+  .navbar,
+  .hero-illustration,
+  footer,
+  .btn,
+  .audio-player {
+    display: none !important;
+  }
+
+  .container {
+    max-width: none !important;
+  }
+
+  .card {
+    border: 2px solid #000 !important;
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+
+  .owl-image {
+    max-height: 150px;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .text-accent,
+  .text-accent-2 {
+    color: #000 !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

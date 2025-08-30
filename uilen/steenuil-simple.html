@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steenuil - De Nacht van de Uil</title>
+    <meta name="description"
+        content="Ontdek de Steenuil: klein maar stoer, vaak te zien op paaltjes en soms ook overdag actief. Luister naar hun roep en leer meer over hun gedrag.">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+        integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/style-simple.css"> 
+
+    <!-- Meta tags for mobile -->
+    <meta name="theme-color" content="#0b1110">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+
+<body>
+    <!-- Header placeholder - will be loaded by script.js -->
+    <div id="app-header"></div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="owl-hero py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <nav aria-label="breadcrumb" class="mb-3">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Steenuil</li>
+                            </ol>
+                        </nav>
+                        <h1 class="display-4 fw-bold text-accent mb-3">
+                            <i class="bi bi-circle-fill me-2" style="font-size: 1rem;"></i>
+                            Steenuil
+                        </h1>
+                        <p class="lead text-muted mb-4">
+                            <em>Athene noctua</em><br>
+                            Klein maar stoer - de charmante dagjager
+                        </p>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge bg-accent text-dark">Dagactief</span>
+                            <span class="badge bg-accent-2 text-dark">Klein formaat</span>
+                            <span class="badge bg-secondary">Gele ogen</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <img src="/assets/img/uilen/steenuil.svg" class="owl-image-large img-fluid"
+                            alt="Steenuil illustratie" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!-- Audio Player -->
+                        <div class="card bg-card border-0 shadow-sm mb-4">
+                            <div class="card-body">
+                                <h3 class="card-title text-accent mb-3">
+                                    <i class="bi bi-volume-up me-2"></i>
+                                    Roep van de Steenuil
+                                </h3>
+                                <p class="text-muted mb-3">
+                                    Luister naar de karakteristieke roep van de steenuil. Ze maken verschillende
+                                    geluiden,
+                                    van zachte 'kieuw' geluiden tot luide alarmroepen.
+                                </p>
+                                <div class="audio-player d-flex align-items-center gap-3">
+                                    <button class="btn btn-outline-accent audio-play-btn" data-audio="steenuil-audio">
+                                        <i class="bi bi-play-circle me-2"></i>
+                                        Afspelen
+                                    </button>
+                                    <audio id="steenuil-audio" preload="none">
+                                        <source src="/assets/audio/steenuil.mp3" type="audio/mpeg">
+                                        Je browser ondersteunt geen audio.
+                                    </audio>
+                                    <small class="text-muted">🎧 Gebruik koptelefoon voor de beste ervaring</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="card bg-card border-0 shadow-sm mb-4">
+                            <div class="card-body">
+                                <h3 class="card-title text-accent mb-3">
+                                    <i class="bi bi-info-circle me-2"></i>
+                                    Over de Steenuil
+                                </h3>
+                                <p class="mb-3">
+                                    De steenuil is een kleine, gedrongen uil met grote gele ogen en een breed, afgeplat
+                                    hoofd.
+                                    Ze zijn opvallend omdat ze vaak ook overdag actief zijn en dan te zien zijn zittend
+                                    op paaltjes,
+                                    dakranden of andere uitkijkposten.
+                                </p>
+                                <p class="mb-3">
+                                    Met hun lengte van ongeveer 20-25 cm zijn steenuilen relatief klein, maar ze
+                                    compenseren
+                                    dit met hun moedige gedrag. Ze zijn niet bang om hun territorium te verdedigen tegen
+                                    veel grotere tegenstanders.
+                                </p>
+                                <p class="mb-0">
+                                    Steenuilen jagen voornamelijk op muizen, insecten en kleine vogels. Hun jacht vindt
+                                    plaats vanuit een zitplek, van waaruit ze plotseling naar hun prooi duiken.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Characteristics -->
+                        <div class="card bg-card border-0 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="card-title text-accent mb-3">
+                                    <i class="bi bi-list-check me-2"></i>
+                                    Herkenningspunten
+                                </h3>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="d-flex align-items-start">
+                                            <i class="bi bi-check-circle text-accent me-2 mt-1"></i>
+                                            <div>
+                                                <strong>Grootte:</strong><br>
+                                                <small class="text-muted">20-25 cm, kleine gedrongen bouw</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex align-items-start">
+                                            <i class="bi bi-check-circle text-accent me-2 mt-1"></i>
+                                            <div>
+                                                <strong>Ogen:</strong><br>
+                                                <small class="text-muted">Grote, heldergele ogen</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex align-items-start">
+                                            <i class="bi bi-check-circle text-accent me-2 mt-1"></i>
+                                            <div>
+                                                <strong>Gedrag:</strong><br>
+                                                <small class="text-muted">Ook overdag actief, zit op paaltjes</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex align-items-start">
+                                            <i class="bi bi-check-circle text-accent me-2 mt-1"></i>
+                                            <div>
+                                                <strong>Roep:</strong><br>
+                                                <small class="text-muted">'Kieuw' geluiden, zachte fluittonen</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="col-lg-4">
+                        <div class="card bg-card border-0 shadow-sm sticky-top" style="top: 100px;">
+                            <div class="card-body">
+                                <h4 class="card-title text-accent mb-3">
+                                    <i class="bi bi-collection me-2"></i>
+                                    Andere Uilen
+                                </h4>
+                                <div class="list-group list-group-flush">
+                                    <a href="/uilen/kerkuil.html"
+                                        class="list-group-item list-group-item-action bg-transparent text-decoration-none">
+                                        <div class="d-flex align-items-center">
+                                            <i class="bi bi-arrow-right text-accent me-2"></i>
+                                            <div>
+                                                <strong>Kerkuil</strong><br>
+                                                <small class="text-muted">Hartvormig gezicht</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="/uilen/bosuil.html"
+                                        class="list-group-item list-group-item-action bg-transparent text-decoration-none">
+                                        <div class="d-flex align-items-center">
+                                            <i class="bi bi-arrow-right text-accent me-2"></i>
+                                            <div>
+                                                <strong>Bosuil</strong><br>
+                                                <small class="text-muted">De bekende 'hoe-hoe'</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="/uilen/velduil.html"
+                                        class="list-group-item list-group-item-action bg-transparent text-decoration-none">
+                                        <div class="d-flex align-items-center">
+                                            <i class="bi bi-arrow-right text-accent me-2"></i>
+                                            <div>
+                                                <strong>Velduil</strong><br>
+                                                <small class="text-muted">Dagjager met golvende vlucht</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="/uilen/ransuil.html"
+                                        class="list-group-item list-group-item-action bg-transparent text-decoration-none">
+                                        <div class="d-flex align-items-center">
+                                            <i class="bi bi-arrow-right text-accent me-2"></i>
+                                            <div>
+                                                <strong>Ransuil</strong><br>
+                                                <small class="text-muted">Oorpluimen en groepsgedrag</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="/uilen/oehoe.html"
+                                        class="list-group-item list-group-item-action bg-transparent text-decoration-none">
+                                        <div class="d-flex align-items-center">
+                                            <i class="bi bi-arrow-right text-accent me-2"></i>
+                                            <div>
+                                                <strong>Oehoe</strong><br>
+                                                <small class="text-muted">Grootste uil van Europa</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="mt-3 pt-3 border-top">
+                                    <a href="/" class="btn btn-outline-accent w-100">
+                                        <i class="bi bi-house me-2"></i>
+                                        Terug naar overzicht
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer placeholder - will be loaded by script.js -->
+    <div id="app-footer"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- Main App Script -->
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

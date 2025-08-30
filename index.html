@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Nacht van de Uil - Ontdek de Uilen van Nederland</title>
+    <meta name="description"
+        content="Ontdek de zes meest voorkomende uilen van Nederland tijdens De Nacht van de Uil. Een NFC-gestuurde wandeling door de nachtelijke wereld van deze fascinerende roofvogels.">
+    <link rel="canonical" href="https://uitvogelpassie.nl/uilen/">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+        integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/pwa/manifest.webmanifest">
+
+    <!-- Meta tags for mobile -->
+    <meta name="theme-color" content="#0b1110">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Nacht van de Uil">
+
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'sha256-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data:; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests;">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">
+                <i class="bi bi-moon-stars me-2"></i>
+                De Nacht van de Uil
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#uilen">Uilen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#instructies">Instructies</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">De Nacht van de Uil</h1>
+                    <p class="lead mb-4">
+                        Ontdek de fascinerende wereld van Nederlandse uilen tijdens dit landelijke evenement.
+                        Een unieke NFC-gestuurde wandeling die je meeneemt in de stille wereld van deze
+                        nachtelijke jagers.
+                    </p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="hero-illustration">
+                        <i class="bi bi-moon-stars display-1 text-accent"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <section id="instructies" class="mb-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card bg-card border-0 shadow-sm">
+                        <div class="card-header bg-transparent border-bottom border-border">
+                            <h2 class="h4 mb-0">
+                                <i class="bi bi-info-circle me-2"></i>
+                                Belangrijk voor een respectvolle wandeling
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-headphones text-accent me-3"></i>
+                                        <span>Gebruik oortjes voor audio</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-brightness-low text-accent me-3"></i>
+                                        <span>Dim je scherm</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-signpost text-accent me-3"></i>
+                                        <span>Blijf op de paden</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-lightbulb text-accent me-3"></i>
+                                        <span>Geen felle lampen</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3 pt-3 border-top border-border">
+                                <p class="mb-0 text-muted small">
+                                    <strong>De Nacht van de Nacht</strong> is een landelijk evenement om bewustzijn te
+                                    creëren
+                                    voor lichtvervuiling. Respecteer de stilte en natuurlijke omgeving van deze
+                                    prachtige roofvogels.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="uilen">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="h3 mb-0">Ontdek de Nederlandse Uilen</h2>
+                <span class="badge bg-accent-2 text-dark">6 soorten</span>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <article class="owl-card card bg-card border-0 shadow-sm h-100">
+                        <div class="position-relative">
+                            <img src="/assets/img/uilen/steenuil.svg" class="card-img-top owl-image"
+                                alt="Steenuil illustratie" loading="lazy">
+                            <div class="visit-indicator" aria-hidden="true">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title h5">Steenuil</h3>
+                            <p class="card-text text-muted mb-3">
+                                Klein maar stoer. Vaak te zien op paaltjes en soms ook overdag actief.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-accent-2 text-dark">April</span>
+                                <a href="/uilen/steenuil.html" class="btn btn-outline-accent btn-sm">
+                                    Ontdekken <i class="bi bi-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <article class="owl-card card bg-card border-0 shadow-sm h-100">
+                        <div class="position-relative">
+                            <img src="/assets/img/uilen/kerkuil.svg" class="card-img-top owl-image"
+                                alt="Kerkuil illustratie" loading="lazy">
+                            <div class="visit-indicator" aria-hidden="true">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title h5">Kerkuil</h3>
+                            <p class="card-text text-muted mb-3">
+                                Herkenbaar aan het hartvormige gezicht en de volledig stille vlucht.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-accent-2 text-dark">Feb-najaar</span>
+                                <a href="/uilen/kerkuil.html" class="btn btn-outline-accent btn-sm">
+                                    Ontdekken <i class="bi bi-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <article class="owl-card card bg-card border-0 shadow-sm h-100">
+                        <div class="position-relative">
+                            <img src="/assets/img/uilen/bosuil.svg" class="card-img-top owl-image"
+                                alt="Bosuil illustratie" loading="lazy">
+                            <div class="visit-indicator" aria-hidden="true">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title h5">Bosuil</h3>
+                            <p class="card-text text-muted mb-3">
+                                De bekende 'hoe-hoe' roep. Territoriaal en trouw aan hun broedgebied.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-accent-2 text-dark">Feb-mrt</span>
+                                <a href="/uilen/bosuil.html" class="btn btn-outline-accent btn-sm">
+                                    Ontdekken <i class="bi bi-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <article class="owl-card card bg-card border-0 shadow-sm h-100">
+                        <div class="position-relative">
+                            <img src="/assets/img/uilen/velduil.svg" class="card-img-top owl-image"
+                                alt="Velduil illustratie" loading="lazy">
+                            <div class="visit-indicator" aria-hidden="true">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title h5">Velduil</h3>
+                            <p class="card-text text-muted mb-3">
+                                Jaagt ook overdag met een karakteristieke golvende vlucht.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-accent-2 text-dark">Apr-juni</span>
+                                <a href="/uilen/velduil.html" class="btn btn-outline-accent btn-sm">
+                                    Ontdekken <i class="bi bi-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <article class="owl-card card bg-card border-0 shadow-sm h-100">
+                        <div class="position-relative">
+                            <img src="/assets/img/uilen/ransuil.svg" class="card-img-top owl-image"
+                                alt="Ransuil illustratie" loading="lazy">
+                            <div class="visit-indicator" aria-hidden="true">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title h5">Ransuil</h3>
+                            <p class="card-text text-muted mb-3">
+                                Opvallende oorpluimen en roest vaak in groepen tijdens de winter.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-accent-2 text-dark">Eind feb-mrt</span>
+                                <a href="/uilen/ransuil.html" class="btn btn-outline-accent btn-sm">
+                                    Ontdekken <i class="bi bi-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <article class="owl-card card bg-card border-0 shadow-sm h-100">
+                        <div class="position-relative">
+                            <img src="/assets/img/uilen/oehoe.svg" class="card-img-top owl-image"
+                                alt="Oehoe illustratie" loading="lazy">
+                            <div class="visit-indicator" aria-hidden="true">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title h5">Oehoe</h3>
+                            <p class="card-text text-muted mb-3">
+                                De grootste uil van Europa met zijn diepe, krachtige 'oe-hoe' roep.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-accent-2 text-dark">Feb-mrt</span>
+                                <a href="/uilen/oehoe.html" class="btn btn-outline-accent btn-sm">
+                                    Ontdekken <i class="bi bi-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="mb-2">&copy; 2025 De Nacht van de Uil. Een initiatief voor natuurbehoud en bewustwording.
+                    </p>
+                    <p class="mb-0 small">
+                        Deze site respecteert je privacy: geen cookies, geen tracking, geen analytics.
+                    </p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <p class="mb-0 small">
+                        Gemaakt door <a href="https://github.com/iMartzen" target="_blank"
+                            rel="noopener noreferrer">iMartzen</a> met ❤️ voor de natuur
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Canvas for badge generation -->
+    <canvas id="badge-canvas" width="400" height="400" style="display: none;" aria-hidden="true"></canvas>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script>
+        // Service Worker registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/pwa/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>
