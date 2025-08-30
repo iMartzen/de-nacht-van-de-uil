@@ -1,0 +1,67 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Oehoe - Grootste uil, imposant -->
+  <defs>
+    <radialGradient id="oehoeGradient" cx="0.5" cy="0.3" r="0.8">
+      <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#A0522D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#654321;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="oehoeBelly" cx="0.5" cy="0.7" r="0.6">
+      <stop offset="0%" style="stop-color:#DEB887;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#CD853F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A0522D;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Achtergrond cirkel -->
+  <circle cx="200" cy="200" r="180" fill="#1a2a24" stroke="#1fdf8f" stroke-width="2" opacity="0.1"/>
+  
+  <!-- Lichaam - groot en imposant -->
+  <ellipse cx="200" cy="280" rx="90" ry="110" fill="url(#oehoeBelly)"/>
+  
+  <!-- Hoofd - zeer groot -->
+  <circle cx="200" cy="150" r="85" fill="url(#oehoeGradient)"/>
+  
+  <!-- Grote oorpluimen -->
+  <ellipse cx="160" cy="80" rx="12" ry="35" fill="url(#oehoeGradient)" transform="rotate(-20 160 80)"/>
+  <ellipse cx="240" cy="80" rx="12" ry="35" fill="url(#oehoeGradient)" transform="rotate(20 240 80)"/>
+  
+  <!-- Gezichtschijf -->
+  <circle cx="200" cy="150" r="70" fill="#DEB887" opacity="0.9"/>
+  <circle cx="200" cy="150" r="65" fill="none" stroke="#8B4513" stroke-width="3" opacity="0.6"/>
+  
+  <!-- Grote oranje ogen -->
+  <circle cx="175" cy="140" r="25" fill="#FF8C00"/>
+  <circle cx="225" cy="140" r="25" fill="#FF8C00"/>
+  <circle cx="175" cy="140" r="18" fill="#000"/>
+  <circle cx="225" cy="140" r="18" fill="#000"/>
+  <circle cx="178" cy="136" r="5" fill="#FFF"/>
+  <circle cx="228" cy="136" r="5" fill="#FFF"/>
+  
+  <!-- Snavel - groot en krachtig -->
+  <polygon points="200,170 190,185 210,185" fill="#8B4513"/>
+  
+  <!-- Massieve vleugels -->
+  <ellipse cx="120" cy="270" rx="40" ry="95" fill="url(#oehoeGradient)" transform="rotate(-15 120 270)"/>
+  <ellipse cx="280" cy="270" rx="40" ry="95" fill="url(#oehoeGradient)" transform="rotate(15 280 270)"/>
+  
+  <!-- Horizontale strepen - kenmerkend patroon -->
+  <rect x="160" y="300" width="80" height="4" fill="#654321" opacity="0.8"/>
+  <rect x="170" y="320" width="60" height="4" fill="#654321" opacity="0.8"/>
+  <rect x="165" y="340" width="70" height="4" fill="#654321" opacity="0.8"/>
+  <rect x="175" y="360" width="50" height="4" fill="#654321" opacity="0.8"/>
+  
+  <!-- Vlekken op vleugels -->
+  <ellipse cx="110" cy="240" rx="8" ry="15" fill="#654321" opacity="0.9"/>
+  <ellipse cx="125" cy="300" rx="7" ry="12" fill="#654321" opacity="0.9"/>
+  <ellipse cx="290" cy="240" rx="8" ry="15" fill="#654321" opacity="0.9"/>
+  <ellipse cx="275" cy="300" rx="7" ry="12" fill="#654321" opacity="0.9"/>
+  
+  <!-- Krachtige poten -->
+  <ellipse cx="175" cy="375" rx="15" ry="25" fill="#DAA520"/>
+  <ellipse cx="225" cy="375" rx="15" ry="25" fill="#DAA520"/>
+  
+  <!-- Accent groene details -->
+  <circle cx="200" cy="60" r="4" fill="#1fdf8f" opacity="0.8"/>
+  <text x="200" y="395" text-anchor="middle" fill="#1fdf8f" font-family="system-ui" font-size="16" font-weight="bold">Oehoe</text>
+</svg>

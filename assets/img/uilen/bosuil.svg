@@ -1,0 +1,57 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bosuil - Robuust en bruin -->
+  <defs>
+    <radialGradient id="bosuilGradient" cx="0.5" cy="0.3" r="0.8">
+      <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#A0522D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#654321;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="bosuilBelly" cx="0.5" cy="0.7" r="0.6">
+      <stop offset="0%" style="stop-color:#DEB887;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#CD853F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A0522D;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Achtergrond cirkel -->
+  <circle cx="200" cy="200" r="180" fill="#1a2a24" stroke="#1fdf8f" stroke-width="2" opacity="0.1"/>
+  
+  <!-- Lichaam - robuust -->
+  <ellipse cx="200" cy="270" rx="85" ry="100" fill="url(#bosuilBelly)"/>
+  
+  <!-- Hoofd - groot en rond -->
+  <circle cx="200" cy="160" r="80" fill="url(#bosuilGradient)"/>
+  
+  <!-- Gezichtschijf -->
+  <circle cx="200" cy="160" r="65" fill="#DEB887" opacity="0.9"/>
+  <circle cx="200" cy="160" r="60" fill="none" stroke="#8B4513" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Ogen - groot en donker -->
+  <circle cx="180" cy="150" r="22" fill="#2F4F4F"/>
+  <circle cx="220" cy="150" r="22" fill="#2F4F4F"/>
+  <circle cx="180" cy="150" r="15" fill="#000"/>
+  <circle cx="220" cy="150" r="15" fill="#000"/>
+  <circle cx="183" cy="146" r="4" fill="#FFF"/>
+  <circle cx="223" cy="146" r="4" fill="#FFF"/>
+  
+  <!-- Snavel -->
+  <polygon points="200,175 193,185 207,185" fill="#DAA520"/>
+  
+  <!-- Vleugels -->
+  <ellipse cx="130" cy="260" rx="35" ry="80" fill="url(#bosuilGradient)" transform="rotate(-15 130 260)"/>
+  <ellipse cx="270" cy="260" rx="35" ry="80" fill="url(#bosuilGradient)" transform="rotate(15 270 260)"/>
+  
+  <!-- Gestreepte patronen -->
+  <rect x="190" y="290" width="20" height="4" fill="#8B4513" opacity="0.7"/>
+  <rect x="185" y="300" width="30" height="3" fill="#8B4513" opacity="0.7"/>
+  <rect x="190" y="310" width="20" height="4" fill="#8B4513" opacity="0.7"/>
+  <rect x="185" y="320" width="30" height="3" fill="#8B4513" opacity="0.7"/>
+  
+  <!-- Poten - sterke klauwen -->
+  <ellipse cx="180" cy="355" rx="12" ry="20" fill="#DAA520"/>
+  <ellipse cx="220" cy="355" rx="12" ry="20" fill="#DAA520"/>
+  
+  <!-- Accent groene details -->
+  <circle cx="200" cy="100" r="3" fill="#1fdf8f" opacity="0.8"/>
+  <text x="200" y="385" text-anchor="middle" fill="#1fdf8f" font-family="system-ui" font-size="16" font-weight="bold">Bosuil</text>
+</svg>

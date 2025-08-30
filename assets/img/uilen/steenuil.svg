@@ -1,0 +1,55 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Steenuil - Klein maar karakteristiek -->
+  <defs>
+    <radialGradient id="steenuilGradient" cx="0.5" cy="0.3" r="0.8">
+      <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#A0522D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#654321;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="steenuilBelly" cx="0.5" cy="0.7" r="0.6">
+      <stop offset="0%" style="stop-color:#F5DEB3;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#DEB887;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D2B48C;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Achtergrond cirkel -->
+  <circle cx="200" cy="200" r="180" fill="#1a2a24" stroke="#1fdf8f" stroke-width="2" opacity="0.1"/>
+  
+  <!-- Lichaam -->
+  <ellipse cx="200" cy="250" rx="70" ry="90" fill="url(#steenuilBelly)"/>
+  
+  <!-- Hoofd -->
+  <circle cx="200" cy="180" r="65" fill="url(#steenuilGradient)"/>
+  
+  <!-- Gezichtschijf -->
+  <circle cx="200" cy="180" r="50" fill="#F5DEB3" opacity="0.8"/>
+  
+  <!-- Ogen -->
+  <circle cx="185" cy="170" r="18" fill="#FFD700"/>
+  <circle cx="215" cy="170" r="18" fill="#FFD700"/>
+  <circle cx="185" cy="170" r="12" fill="#000"/>
+  <circle cx="215" cy="170" r="12" fill="#000"/>
+  <circle cx="188" cy="167" r="3" fill="#FFF"/>
+  <circle cx="218" cy="167" r="3" fill="#FFF"/>
+  
+  <!-- Snavel -->
+  <polygon points="200,190 195,200 205,200" fill="#DAA520"/>
+  
+  <!-- Vleugels -->
+  <ellipse cx="150" cy="240" rx="25" ry="60" fill="url(#steenuilGradient)" transform="rotate(-15 150 240)"/>
+  <ellipse cx="250" cy="240" rx="25" ry="60" fill="url(#steenuilGradient)" transform="rotate(15 250 240)"/>
+  
+  <!-- Vlekken op borst -->
+  <circle cx="180" cy="270" r="3" fill="#8B4513" opacity="0.6"/>
+  <circle cx="220" cy="280" r="3" fill="#8B4513" opacity="0.6"/>
+  <circle cx="200" cy="290" r="2" fill="#8B4513" opacity="0.6"/>
+  
+  <!-- Poten -->
+  <ellipse cx="185" cy="330" rx="8" ry="15" fill="#DAA520"/>
+  <ellipse cx="215" cy="330" rx="8" ry="15" fill="#DAA520"/>
+  
+  <!-- Accent groene details -->
+  <circle cx="200" cy="120" r="3" fill="#1fdf8f" opacity="0.8"/>
+  <text x="200" y="370" text-anchor="middle" fill="#1fdf8f" font-family="system-ui" font-size="16" font-weight="bold">Steenuil</text>
+</svg>
