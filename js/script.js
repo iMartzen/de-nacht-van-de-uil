@@ -9,10 +9,9 @@ const UilenApp = {
   currentPage: null,
 
   // Initialize the app
-  init() {
+  async init() {
     this.currentPage = this.getCurrentPage();
-    this.loadHeader();
-    this.loadFooter();
+    await Promise.all([this.loadHeader(), this.loadFooter()]);
     this.initPageSpecific();
     this.initEventListeners();
     console.log("UilenApp initialized for page:", this.currentPage);
@@ -31,122 +30,95 @@ const UilenApp = {
   },
 
   // Load and inject header
-  loadHeader() {
-    const headerHTML = `
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-                <div class="container">
-                    <a class="navbar-brand fw-bold" href="/">
-                        <i class="bi bi-moon-stars me-2"></i>
-                        De Nacht van de Uil
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link ${
-                                  this.currentPage === "home" ? "active" : ""
-                                }" href="/">
-                                    <i class="bi bi-house-door me-1"></i>Home
-                                </a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="bi bi-book me-1"></i>Uilen
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item ${
-                                      this.currentPage === "steenuil"
-                                        ? "active"
-                                        : ""
-                                    }" href="/uilen/steenuil.html">Steenuil</a></li>
-                                    <li><a class="dropdown-item ${
-                                      this.currentPage === "kerkuil"
-                                        ? "active"
-                                        : ""
-                                    }" href="/uilen/kerkuil.html">Kerkuil</a></li>
-                                    <li><a class="dropdown-item ${
-                                      this.currentPage === "bosuil"
-                                        ? "active"
-                                        : ""
-                                    }" href="/uilen/bosuil.html">Bosuil</a></li>
-                                    <li><a class="dropdown-item ${
-                                      this.currentPage === "velduil"
-                                        ? "active"
-                                        : ""
-                                    }" href="/uilen/velduil.html">Velduil</a></li>
-                                    <li><a class="dropdown-item ${
-                                      this.currentPage === "ransuil"
-                                        ? "active"
-                                        : ""
-                                    }" href="/uilen/ransuil.html">Ransuil</a></li>
-                                    <li><a class="dropdown-item ${
-                                      this.currentPage === "oehoe"
-                                        ? "active"
-                                        : ""
-                                    }" href="/uilen/oehoe.html">Oehoe</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        `;
+  async loadHeader() {
+    try {
+      const response = await fetch("/partials/header.html");
+      if (!response.ok) throw new Error("Failed to load header");
 
-    const headerElement = document.getElementById("app-header");
-    if (headerElement) {
-      headerElement.innerHTML = headerHTML;
+      let headerHTML = await response.text();
+
+      // Replace placeholders with active classes
+      headerHTML = headerHTML
+        .replace("{{HOME_ACTIVE}}", this.currentPage === "home" ? "active" : "")
+        .replace(
+          "{{STEENUIL_ACTIVE}}",
+          this.currentPage === "steenuil" ? "active" : ""
+        )
+        .replace(
+          "{{KERKUIL_ACTIVE}}",
+          this.currentPage === "kerkuil" ? "active" : ""
+        )
+        .replace(
+          "{{BOSUIL_ACTIVE}}",
+          this.currentPage === "bosuil" ? "active" : ""
+        )
+        .replace(
+          "{{VELDUIL_ACTIVE}}",
+          this.currentPage === "velduil" ? "active" : ""
+        )
+        .replace(
+          "{{RANSUIL_ACTIVE}}",
+          this.currentPage === "ransuil" ? "active" : ""
+        )
+        .replace(
+          "{{OEHOE_ACTIVE}}",
+          this.currentPage === "oehoe" ? "active" : ""
+        );
+
+      const headerElement = document.getElementById("app-header");
+      if (headerElement) {
+        headerElement.innerHTML = headerHTML;
+      }
+    } catch (error) {
+      console.error("Error loading header:", error);
+      // Fallback to basic header if loading fails
+      const headerElement = document.getElementById("app-header");
+      if (headerElement) {
+        headerElement.innerHTML = `
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <div class="container">
+              <a class="navbar-brand fw-bold" href="/">
+                <i class="bi bi-moon-stars me-2"></i>
+                De Nacht van de Uil
+              </a>
+            </div>
+          </nav>
+        `;
+      }
     }
   },
 
   // Load and inject footer
-  loadFooter() {
-    const footerHTML = `
-            <footer class="bg-card border-top mt-5">
-                <div class="container py-4">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h5 class="text-accent mb-3">
-                                <i class="bi bi-moon-stars me-2"></i>
-                                De Nacht van de Uil
-                            </h5>
-                            <p class="text-muted mb-0">
-                                Ontdek de fascinerende wereld van Nederlandse uilen tijdens deze educatieve wandeling.
-                                Een initiatief voor natuurbehoud en bewustwording.
-                            </p>
-                        </div>
-                        <div class="col-md-6">
-                            <h6 class="text-accent mb-3">Quick Links</h6>
-                            <ul class="list-unstyled">
-                                <li><a href="/" class="text-decoration-none text-muted">Home</a></li>
-                                <li><a href="/uilen/steenuil.html" class="text-decoration-none text-muted">Steenuil</a></li>
-                                <li><a href="/uilen/kerkuil.html" class="text-decoration-none text-muted">Kerkuil</a></li>
-                                <li><a href="/uilen/bosuil.html" class="text-decoration-none text-muted">Bosuil</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <hr class="my-4 border-secondary">
-                    <div class="row align-items-center">
-                        <div class="col-md-8">
-                            <p class="text-muted small mb-0">
-                                © 2025 De Nacht van de Uil. Gemaakt met ❤️ voor de natuur.
-                            </p>
-                        </div>
-                        <div class="col-md-4 text-md-end">
-                            <p class="text-muted small mb-0">
-                                Simpel • Mobiel • Cache-vrij
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        `;
+  async loadFooter() {
+    try {
+      const response = await fetch("/partials/footer.html");
+      if (!response.ok) throw new Error("Failed to load footer");
 
-    const footerElement = document.getElementById("app-footer");
-    if (footerElement) {
-      footerElement.innerHTML = footerHTML;
+      const footerHTML = await response.text();
+
+      const footerElement = document.getElementById("app-footer");
+      if (footerElement) {
+        footerElement.innerHTML = footerHTML;
+      }
+    } catch (error) {
+      console.error("Error loading footer:", error);
+      // Fallback to basic footer if loading fails
+      const footerElement = document.getElementById("app-footer");
+      if (footerElement) {
+        footerElement.innerHTML = `
+          <footer class="bg-card border-top mt-5">
+            <div class="container py-4">
+              <div class="row">
+                <div class="col-md-8">
+                  <p class="text-muted small mb-0">
+                    © 2025 De Nacht van de Uil. Gemaakt met ❤️ voor de natuur.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </footer>
+        `;
+      }
     }
   },
 

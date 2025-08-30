@@ -7,7 +7,7 @@
     <title>Bosuil - De Nacht van de Uil</title>
     <meta name="description"
         content="Ontdek de Bosuil: de bekende 'hoe-hoe' roep. Territoriaal en trouw aan hun broedgebied. Luister naar hun roep en leer meer over hun gedrag.">
-    <link rel="canonical" href="https://uitvogelpassie.nl/uilen/bosuil.html">
+    <link rel="canonical" href="/uilen/bosuil.html">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -37,28 +37,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="/">
-                <i class="bi bi-moon-stars me-2"></i>
-                De Nacht van de Uil
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/uilen/bosuil.html">Bosuil</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Header will be injected here by JavaScript -->
+    <div id="app-header"></div>
 
     <header class="owl-hero py-5">
         <div class="container">
@@ -105,7 +85,13 @@
                         <p class="text-muted mb-3">
                             Gebruik oortjes voor de beste ervaring en om de natuurlijke omgeving te respecteren.
                         </p>
-                        <audio controls preload="none" class="w-100" aria-label="Audio opname van een bosuil">
+                        <div class="d-flex gap-3 mb-3">
+                            <button class="btn btn-outline-accent audio-play-btn" data-audio="bosuil-audio">
+                                <i class="bi bi-play-circle me-2"></i>
+                                Afspelen
+                            </button>
+                        </div>
+                        <audio id="bosuil-audio" preload="none" aria-label="Audio opname van een bosuil">
                             <source src="/assets/audio/bosuil.mp3" type="audio/mpeg">
                             Je browser ondersteunt geen audio. <a href="/assets/audio/bosuil.mp3"
                                 class="text-accent">Download de audio</a>.
@@ -262,34 +248,16 @@
         </div>
     </main>
 
-    <footer class="bg-dark py-4 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <p class="mb-2">&copy; 2025 De Nacht van de Uil. Een initiatief voor natuurbehoud en bewustwording.
-                    </p>
-                    <p class="mb-0 small text-muted">
-                        Deze site respecteert je privacy: geen cookies, geen tracking, geen analytics.
-                    </p>
-                </div>
-                <div class="col-md-4 text-md-end">
-                    <p class="mb-0 small text-muted">
-                        Gemaakt met ❤️ voor de natuur
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer will be injected here by JavaScript -->
+    <div id="app-footer"></div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
-    <!-- Page specific JS -->
-    <script>
-        // No additional tracking needed
-    </script>
+    <!-- Custom JS -->
+    <script src="/js/script.js"></script>
 </body>
 
 </html>
