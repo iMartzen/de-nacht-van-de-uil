@@ -1,86 +1,138 @@
 # 🦉 De Nacht van de Uil
 
-Een **eenvoudige** versie van de Nederlandse uilen educatie webapp.
+Een **interactieve NFC-gestuurde website** voor een educatieve nachtelijke uilenwandeling. Deze website is ontworpen om bezoekers kennis te laten maken met de zes meest voorkomende uilen van Nederland door middel van NFC-technologie en glow-in-the-dark 3D-geprinte tags.
 
-## ✨ Features van Simple Version
+## 🎯 Over de Activiteit
 
-- **Mobiel vriendelijk**: Responsive design met Bootstrap 5
-- **Een JavaScript bestand**: Alle functionaliteit in `/js/script.js`
-- **Herbruikbare componenten**: Header en footer worden dynamisch geladen
+De Nacht van de Uil is een unieke, educatieve wandeling die speciaal is ontwikkeld om de fascinerende wereld van Nederlandse uilen te ontdekken zonder geluidsoverlast of fel licht. De activiteit maakt gebruik van:
 
-## 📁 Structuur Simple Version
+- **NFC-gestuurde informatie**: Bezoekers scannen glow-in-the-dark 3D-geprinte tags met hun smartphone
+- **Educatie**: Korte, informatieve webpagina met audio-opnames (circa 30 seconden) per uilensoort
+- **Toegankelijk design**: Geen externe speakers nodig - alles via oortjes op de eigen telefoon
+- **Duurzame materialen**: 3D-geprinte NFC-tags van glow-in-the-dark PLA filament
 
-```
+### Uilensoorten in de Wandeling
+
+De website bevat informatie over zes Nederlandse uilensoorten:
+
+1. **Steenuil** - Klein maar stoer, vaak overdag actief
+2. **Kerkuil** - De witte spookachtige verschijning
+3. **Bosuil** - De bekende "oehoe" roep uit het bos
+4. **Velduil** - De open veld bewoner
+5. **Ransuil** - Met opvallende "oren"
+6. **Oehoe** - De grootste uil van Nederland
+
+## 📂 Website Structuur
+
+```text
 /
-├── index.html         # Hoofdpagina
-├── /uilen/
-│   └── steenuil.html  # Uilen pagina's
-|   └── ..   
+├── index.html              # Hoofdpagina met introductie
+├── /uilen/                 # Uilensoort pagina's
+│   ├── steenuil.html      
+│   ├── kerkuil.html       
+│   ├── bosuil.html        
+│   ├── velduil.html       
+│   ├── ransuil.html       
+│   └── oehoe.html         
 ├── /js/
-│   └── script.js      # Centrale JavaScript
+│   └── script.js          # Centrale JavaScript functionaliteit
+├── /css/
+│   └── style.css          # Aangepaste styling
 ├── /assets/
-│   └── css/
-│       └── style.css  # Vereenvoudigde CSS
-└── README.md          # Deze documentatie
+│   ├── /audio/            # Vogelgeluiden per soort
+│   └── /img/              # Illustraties en afbeeldingen
+├── /partials/
+│   ├── header.html        # Herbruikbare header
+│   └── footer.html        # Herbruikbare footer
+├── /3d/                   # 3D-bestanden voor NFC-tags
 ```
 
 ## 🛠 Technische Details
 
-### JavaScript Architectuur
+### Technologie Stack
 
-```javascript
-const UilenApp = {
-    init(),                    // Initialiseer app
-    loadHeader(),              // Laad herbruikbare header
-    loadFooter(),              // Laad herbruikbare footer
-    initPageSpecific(),        // Pagina-specifieke functionaliteit
-    initAudioPlayer(),         // Audio controls
-    initEventListeners()       // Global event handling
-}
-```
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Framework**: Bootstrap 5.3.2 voor responsive design
+- **Icons**: Bootstrap Icons 1.11.1
+- **Audio**: Xeno-Canto vogelgeluiden onder Creative Commons licenties
+- **NFC**: Web NFC API voor tag-interactie
+- **3D**: STL en 3MF bestanden voor glow-in-the-dark PLA printing
 
-### CSS Structuur
+### Design Principes
 
-- Bootstrap 5 via CDN
-- Custom CSS variabelen voor theming
-- Mobile-first responsive design
-- Dark theme met groene accenten
+- **Toegankelijk**: WCAG-vriendelijk, mobile-first ontwerp
+- **Duurzaam**: Geen externe analytics, cookies of tracking
+- **Offline-ready**: Minimale afhankelijkheden, statische bestanden
+- **Dark theme**: Donkergroen (`#0b1110`) met helder groene accenten (`#1fdf8f`)
 
-### Geen Caching
+## 🎪 Activiteit Organiseren
 
-- Bestanden worden altijd vers geladen
-- Geen service worker registratie
-- Browser cache wordt uitgeschakeld waar mogelijk
+Wil je deze activiteit zelf organiseren? Alle benodigde materialen en instructies zijn beschikbaar:
 
-## 📱 Mobile Friendly
+### Vereisten voor Organisatoren
 
-- Touch-friendly interface
-- Responsive navigation
-- Optimized for small screens
-- Fast loading without cache complexity
+- **Locatie**: Stille, donkere paden (circa 1 kilometer lus)
+- **Groepsgrootte**: 6-8 personen per tijdvak om stilte te waarborgen
+- **Infopunt**: Start/finish locatie met opwarmingsmogelijkheden
+- **Educatief materiaal**: Opgezette uilen en uilenballen voor hands-on ervaring
 
-## 🎨 Design System
+### 3D-Bestanden en NFC-Tags
 
-Dezelfde visuele identiteit als origineel:
+In de [`3d/`](./3d/) directory vind je:
 
-- **Background**: `#0b1110` (Donkergroen-zwart)
-- **Accent**: `#1fdf8f` (Helder groen)
-- **Cards**: `#0f1614` (Donkere kaarten)
-- **Typography**: System UI font stack
+- `NFC-label-example.stl` - Basis 3D-model voor NFC-tags
+- `NFC-label-example-with-NFC-hole.3mf` - Model met NFC-chip ruimte
 
-## 🧪 Development
+**Benodigde materialen:**
 
-Voor de simple version is alleen een basic HTTP server nodig:
+- 1 kg glow-in-the-dark PLA filament (1.75mm)
+- 12+ NTAG213 NFC-stickers
+- Montage materiaal (RVS-schroeven, tie-wraps of magneten)
+
+### Technische Setup
+
+Voor lokale ontwikkeling van de website:
 
 ```bash
-# Python (aanbevolen)
+# Python HTTP server (aanbevolen)
 python3 -m http.server 8000
 
-# Of Node.js
+# Node.js alternatief
 npx serve . -p 8000
 
-# Of PHP
+# PHP alternatief
 php -S localhost:8000
 ```
 
-Voor vragen: Open een issue in de repository.
+Bezoek dan `http://localhost:8000` om de website te bekijken.
+
+### NFC-Programmering
+
+1. Download een NFC-app zoals "NFC Tools"
+2. Programmeer elke tag met de corresponderende URL:
+   - `[jouw-domein]/uilen/steenuil.html`
+   - `[jouw-domein]/uilen/kerkuil.html`
+   - Etc. voor alle 6 uilensoorten
+3. Test op zowel Android als iPhone
+4. Vergrendel tags met wachtwoord als backup
+
+## 📄 Licenties en Credits
+
+### Bronvermelding
+
+Volledige credits zijn beschikbaar in [`credits.txt`](./credits.txt), inclusief:
+
+- **Audio**: Xeno-Canto gemeenschap (<https://www.xeno-canto.org>)
+- **Technologie**: Bootstrap, Bootstrap Icons, Google Fonts
+- **Ontwikkeling**: iMartzen
+- **Organisatie**: IVN Son en Breugel
+
+### Licentie
+
+Dit project is beschikbaar onder de MIT License. Zie [`LICENSE`](./LICENSE) voor volledige voorwaarden.
+
+**Belangrijk**: Audio-bestanden van Xeno-Canto hebben individuele Creative Commons licenties. Controleer [`credits.txt`](./credits.txt) voor specifieke attributie-vereisten per audiobestand.
+
+---
+
+**Contact**: Voor vragen over het organiseren van deze activiteit of technische ondersteuning, open een issue in deze repository.
