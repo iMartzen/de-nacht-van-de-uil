@@ -1,5 +1,5 @@
 <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-  <!-- Velduil - Slank met lange vleugels -->
+  <!-- Velduil - Slank met lange vleugels (clean version) -->
   <defs>
     <radialGradient id="velduilGradient" cx="0.5" cy="0.3" r="0.8">
       <stop offset="0%" style="stop-color:#D2B48C;stop-opacity:1" />
@@ -12,9 +12,6 @@
       <stop offset="100%" style="stop-color:#D2B48C;stop-opacity:1" />
     </radialGradient>
   </defs>
-  
-  <!-- Achtergrond cirkel -->
-  <circle cx="200" cy="200" r="180" fill="#1a2a24" stroke="#1fdf8f" stroke-width="2" opacity="0.1"/>
   
   <!-- Lichaam - slank -->
   <ellipse cx="200" cy="260" rx="65" ry="95" fill="url(#velduilBelly)"/>
@@ -37,16 +34,8 @@
   <polygon points="200,170 195,178 205,178" fill="#8B7355"/>
   
   <!-- Lange vleugels - karakteristiek voor velduil -->
-  <ellipse cx="120" cy="250" rx="25" ry="90" fill="url(#velduilGradient)" transform="rotate(-20 120 250)"/>
-  <ellipse cx="280" cy="250" rx="25" ry="90" fill="url(#velduilGradient)" transform="rotate(20 280 250)"/>
-  
-  <!-- Vleugelpunten -->
-  <ellipse cx="105" cy="310" rx="8" ry="25" fill="#8B7355" transform="rotate(-20 105 310)"/>
-  <ellipse cx="295" cy="310" rx="8" ry="25" fill="#8B7355" transform="rotate(20 295 310)"/>
-  
-  <!-- Donkere vlekken rond ogen -->
-  <circle cx="185" cy="155" r="20" fill="none" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
-  <circle cx="215" cy="155" r="20" fill="none" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+  <ellipse cx="145" cy="250" rx="25" ry="75" fill="url(#velduilGradient)" transform="rotate(-5 145 250)"/>
+  <ellipse cx="255" cy="250" rx="25" ry="75" fill="url(#velduilGradient)" transform="rotate(5 255 250)"/>
   
   <!-- Gestreepte patronen op borst -->
   <line x1="180" y1="280" x2="220" y2="280" stroke="#8B7355" stroke-width="2" opacity="0.5"/>
@@ -56,8 +45,4 @@
   <!-- Poten -->
   <ellipse cx="185" cy="345" rx="8" ry="16" fill="#DAA520"/>
   <ellipse cx="215" cy="345" rx="8" ry="16" fill="#DAA520"/>
-  
-  <!-- Accent groene details -->
-  <circle cx="200" cy="110" r="3" fill="#1fdf8f" opacity="0.8"/>
-  <text x="200" y="380" text-anchor="middle" fill="#1fdf8f" font-family="system-ui" font-size="16" font-weight="bold">Velduil</text>
 </svg>

@@ -1,5 +1,5 @@
 <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-  <!-- Ransuil - Met karakteristieke oorpluimen -->
+  <!-- Ransuil - Met karakteristieke oorpluimen (clean version) -->
   <defs>
     <radialGradient id="ransuilGradient" cx="0.5" cy="0.3" r="0.8">
       <stop offset="0%" style="stop-color:#A0522D;stop-opacity:1" />
@@ -12,9 +12,6 @@
       <stop offset="100%" style="stop-color:#D2B48C;stop-opacity:1" />
     </radialGradient>
   </defs>
-  
-  <!-- Achtergrond cirkel -->
-  <circle cx="200" cy="200" r="180" fill="#1a2a24" stroke="#1fdf8f" stroke-width="2" opacity="0.1"/>
   
   <!-- Lichaam -->
   <ellipse cx="200" cy="270" rx="70" ry="90" fill="url(#ransuilBelly)"/>
@@ -42,8 +39,8 @@
   <polygon points="200,175 194,183 206,183" fill="#8B4513"/>
   
   <!-- Vleugels -->
-  <ellipse cx="145" cy="250" rx="28" ry="75" fill="url(#ransuilGradient)" transform="rotate(-10 145 250)"/>
-  <ellipse cx="255" cy="250" rx="28" ry="75" fill="url(#ransuilGradient)" transform="rotate(10 255 250)"/>
+  <ellipse cx="145" cy="265" rx="28" ry="75" fill="url(#ransuilGradient)" transform="rotate(-10 145 265)"/>
+  <ellipse cx="255" cy="265" rx="28" ry="75" fill="url(#ransuilGradient)" transform="rotate(10 255 265)"/>
   
   <!-- Verticale strepen op borst - karakteristiek -->
   <line x1="180" y1="280" x2="180" y2="320" stroke="#8B4513" stroke-width="3" opacity="0.7"/>
@@ -60,8 +57,4 @@
   <!-- Poten -->
   <ellipse cx="185" cy="350" rx="10" ry="18" fill="#DAA520"/>
   <ellipse cx="215" cy="350" rx="10" ry="18" fill="#DAA520"/>
-  
-  <!-- Accent groene details -->
-  <circle cx="200" cy="90" r="3" fill="#1fdf8f" opacity="0.8"/>
-  <text x="200" y="385" text-anchor="middle" fill="#1fdf8f" font-family="system-ui" font-size="16" font-weight="bold">Ransuil</text>
 </svg>

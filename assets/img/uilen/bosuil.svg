@@ -1,5 +1,5 @@
 <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-  <!-- Bosuil - Robuust en bruin -->
+  <!-- Bosuil - Robuust en bruin (without text and background circle) -->
   <defs>
     <radialGradient id="bosuilGradient" cx="0.5" cy="0.3" r="0.8">
       <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
@@ -12,9 +12,6 @@
       <stop offset="100%" style="stop-color:#A0522D;stop-opacity:1" />
     </radialGradient>
   </defs>
-  
-  <!-- Achtergrond cirkel -->
-  <circle cx="200" cy="200" r="180" fill="#1a2a24" stroke="#1fdf8f" stroke-width="2" opacity="0.1"/>
   
   <!-- Lichaam - robuust -->
   <ellipse cx="200" cy="270" rx="85" ry="100" fill="url(#bosuilBelly)"/>
@@ -50,8 +47,4 @@
   <!-- Poten - sterke klauwen -->
   <ellipse cx="180" cy="355" rx="12" ry="20" fill="#DAA520"/>
   <ellipse cx="220" cy="355" rx="12" ry="20" fill="#DAA520"/>
-  
-  <!-- Accent groene details -->
-  <circle cx="200" cy="100" r="3" fill="#1fdf8f" opacity="0.8"/>
-  <text x="200" y="385" text-anchor="middle" fill="#1fdf8f" font-family="system-ui" font-size="16" font-weight="bold">Bosuil</text>
 </svg>
