@@ -1,0 +1,87 @@
+CREDITS EN BRONVERMELDING
+
+De Nacht van de Uil
+========================
+
+ALGEMEEN
+--------
+Website ontwikkeling: iMartzen (https://github.com/iMartzen)
+Organisatie: IVN Son en Breugel (https://sonenbreugel.ivn.nl)
+Project: NFC-gestuurde educatieve wandeling Nederlandse uilen
+
+AUDIO OPNAMES
+-------------
+Alle vogelgeluiden zijn afkomstig van Xeno-Canto (www.xeno-canto.org),
+een open collectie van vogelgeluiden wereldwijd.
+
+Bosuil (Tawny Owl - Strix aluco):
+- XC342800 door Lars Buckx
+
+Kerkuil (Western Barn Owl - Tyto alba):
+- XC487837 door Joost van Bruggen
+
+Ransuil (Long-eared Owl - Asio otus):
+- XC704747 door James Lidster
+
+Oehoe (Eurasian Eagle-Owl - Bubo bubo):
+- XC780039 door Michiel Wesselink
+
+Velduil (Short-eared Owl - Asio flammeus):
+- XC880856 door Gosse Hoekstra
+
+Steenuil (Little Owl - Athene noctua):
+- XC881485 door Michel Veldt
+
+Alle audio opnames zijn gebruikt onder de Creative Commons licenties
+zoals vermeld op Xeno-Canto. Zie individuele opnames voor specifieke licentievoorwaarden.
+
+TECHNOLOGIE EN FRAMEWORKS
+--------------------------
+Bootstrap 5.3.2:
+- CSS Framework
+- Copyright (c) 2011-2023 The Bootstrap Authors
+- Licentie: MIT License
+- https://getbootstrap.com/
+
+Bootstrap Icons 1.11.1:
+- Icon library
+- Copyright (c) 2019-2023 The Bootstrap Authors
+- Licentie: MIT License
+- https://icons.getbootstrap.com/
+
+Google Fonts:
+- Noto Color Emoji
+- Copyright Google Inc.
+- Licentie: SIL Open Font License 1.1
+- https://fonts.google.com/noto/specimen/Noto+Color+Emoji
+
+ILLUSTRATIES
+------------
+Alle uilen illustraties (SVG bestanden):
+- Gemaakt door: iMartzen
+- Gebaseerd op: Kenmerken van Nederlandse uilen
+- Licentie: MIT License
+
+NFC TECHNOLOGIE
+---------------
+Web NFC API wordt gebruikt voor de NFC-functionaliteit
+- Browser ondersteuning vereist
+- Geen externe libraries gebruikt
+
+DANKBETUIGINGEN
+---------------
+- Xeno-Canto gemeenschap voor het beschikbaar stellen van vogelgeluiden
+- IVN Son en Breugel voor de educatieve inhoud en natuurkennis
+- Bootstrap team voor het CSS framework
+- Google voor de emoji fonts
+- Mozilla Developer Network (MDN) voor web API documentatie
+
+LAATSTE UPDATE
+--------------
+Credits bijgewerkt op: 1 september 2025
+
+NOTITIES
+--------
+- Audio bestanden vereisen verificatie van individuele auteurs op Xeno-Canto
+- Licentievoorwaarden kunnen per audio bestand verschillen
+- Controleer Xeno-Canto voor de meest recente informatie over gebruik en attributie
