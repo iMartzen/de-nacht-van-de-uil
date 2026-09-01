@@ -270,13 +270,29 @@ const UilenApp = {
     const icon = button.querySelector("i");
     let speaking = false;
 
+    // Pick the most natural-sounding Dutch voice available on this device.
+    // Browsers expose whatever the OS has; quality varies a lot, so we score
+    // candidates instead of grabbing the first one (which is often a robotic
+    // built-in like macOS "Xander" or Linux eSpeak).
     const pickDutchVoice = () => {
       const voices = synth.getVoices() || [];
-      return (
-        voices.find((v) => /^nl(-|_|$)/i.test(v.lang)) ||
-        voices.find((v) => /dutch|nederlands/i.test(v.name)) ||
-        null
+      const dutch = voices.filter(
+        (v) => /^nl(-|_|$)/i.test(v.lang) || /dutch|nederlands/i.test(v.name)
       );
+      if (dutch.length === 0) return null;
+
+      const score = (v) => {
+        const n = (v.name || "").toLowerCase();
+        let s = 0;
+        if (n.includes("google")) s += 100; // Google network voices sound best
+        if (/natural|neural|premium|enhanced|verbeterd|siri/.test(n)) s += 60;
+        if (v.localService === false) s += 40; // network > local on most systems
+        if (/nl-nl/i.test(v.lang)) s += 10; // prefer NL over Flemish (nl-BE)
+        if (/compact|espeak|pico|eloquence/.test(n)) s -= 100; // robotic engines
+        return s;
+      };
+
+      return dutch.slice().sort((a, b) => score(b) - score(a))[0];
     };
 
     const setIdle = () => {
