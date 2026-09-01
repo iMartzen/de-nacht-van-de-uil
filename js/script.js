@@ -97,6 +97,7 @@ const UilenApp = {
     this.currentPage = this.getCurrentPage();
     await this.loadHeaderAndFooter();
     this.initAudioPlayer();
+    this.initStoryNarration();
     this.initMobileMenu();
   },
 
@@ -207,6 +208,9 @@ const UilenApp = {
         if (!audio) return;
 
         if (audio.paused) {
+          // Stop any spoken story narration before playing a bird call
+          if (window.speechSynthesis) window.speechSynthesis.cancel();
+
           // Pause other audio and reset buttons
           document.querySelectorAll("audio").forEach((otherAudio) => {
             if (otherAudio !== audio) otherAudio.pause();
@@ -240,6 +244,91 @@ const UilenApp = {
         }
       });
     });
+  },
+
+  // Read the per-stop owl story aloud in Dutch using the Web Speech API.
+  // No audio files needed; the story text stays visible as a fallback.
+  initStoryNarration() {
+    const storyEl = document.querySelector(".owl-story[data-tts]");
+    const button = document.querySelector(".story-play-btn");
+    if (!storyEl || !button) return;
+
+    const synth = window.speechSynthesis;
+    // Hide the button when the browser can't do speech synthesis; text remains readable.
+    if (!synth || typeof SpeechSynthesisUtterance === "undefined") {
+      button.classList.add("d-none");
+      return;
+    }
+
+    const text = storyEl.textContent.replace(/\s+/g, " ").trim();
+    if (!text) {
+      button.classList.add("d-none");
+      return;
+    }
+
+    const label = button.querySelector("span");
+    const icon = button.querySelector("i");
+    let speaking = false;
+
+    const pickDutchVoice = () => {
+      const voices = synth.getVoices() || [];
+      return (
+        voices.find((v) => /^nl(-|_|$)/i.test(v.lang)) ||
+        voices.find((v) => /dutch|nederlands/i.test(v.name)) ||
+        null
+      );
+    };
+
+    const setIdle = () => {
+      speaking = false;
+      if (icon) icon.className = "bi bi-play-circle me-2";
+      if (label) label.textContent = "Verhaal voorlezen";
+      button.className = "btn btn-outline-accent story-play-btn";
+    };
+
+    const setSpeaking = () => {
+      speaking = true;
+      if (icon) icon.className = "bi bi-stop-circle me-2";
+      if (label) label.textContent = "Stoppen";
+      button.className = "btn btn-outline-accent-2 story-play-btn";
+    };
+
+    const start = () => {
+      synth.cancel(); // clear any queued or lingering utterance
+      // Pause any playing bird-call audio so the two don't overlap
+      document.querySelectorAll("audio").forEach((a) => a.pause());
+
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = "nl-NL";
+      utter.rate = 0.95;
+      utter.pitch = 1;
+      const voice = pickDutchVoice();
+      if (voice) utter.voice = voice;
+      utter.onend = setIdle;
+      utter.onerror = setIdle;
+      synth.speak(utter);
+      setSpeaking();
+    };
+
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (speaking) {
+        synth.cancel();
+        setIdle();
+      } else {
+        start();
+      }
+    });
+
+    // Voices can load asynchronously; this nudges some browsers to populate them.
+    if (typeof synth.onvoiceschanged !== "undefined") {
+      synth.onvoiceschanged = () => synth.getVoices();
+    }
+
+    // Never let narration keep talking after leaving the page.
+    const stopNarration = () => synth.cancel();
+    window.addEventListener("beforeunload", stopNarration);
+    window.addEventListener("pagehide", stopNarration);
   },
 
   // Handle mobile menu

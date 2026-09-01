@@ -1,6 +1,6 @@
 # 🦉 De Nacht van de Uil
 
-Een **interactieve NFC-gestuurde website** voor een educatieve nachtelijke uilenwandeling. Deze website is ontworpen om bezoekers kennis te laten maken met de zes meest voorkomende uilen van Nederland door middel van NFC-technologie en glow-in-the-dark 3D-geprinte tags.
+Een **interactieve NFC-gestuurde website** voor een educatieve nachtelijke uilenwandeling. Deze website is ontworpen om bezoekers kennis te laten maken met de zes uilensoorten die in Nederland broeden door middel van NFC-technologie en glow-in-the-dark 3D-geprinte tags.
 
 ## 🎯 Over de Activiteit
 
@@ -17,7 +17,7 @@ De website bevat informatie over zes Nederlandse uilensoorten:
 
 1. **Steenuil** - Klein maar stoer, vaak overdag actief
 2. **Kerkuil** - De witte spookachtige verschijning
-3. **Bosuil** - De bekende "oehoe" roep uit het bos
+3. **Bosuil** - De bekende "hoe-hoe" roep uit het bos
 4. **Velduil** - De open veld bewoner
 5. **Ransuil** - Met opvallende "oren"
 6. **Oehoe** - De grootste uil van Nederland
@@ -67,7 +67,16 @@ De website bevat informatie over zes Nederlandse uilensoorten:
 
 ## 🎪 Activiteit Organiseren
 
-Wil je deze activiteit zelf organiseren? Alle benodigde materialen en instructies zijn beschikbaar:
+Wil je deze activiteit zelf organiseren? Alle benodigde materialen en instructies zijn beschikbaar.
+
+### 📚 Voor organisatoren
+
+Praktische draaiboeken en achtergrond staan in de map [`docs/`](./docs/):
+
+- **[Organisatie](./docs/organisatie.md)** — hoe zet je een avond op (locatie, groep, benodigdheden, checklist).
+- **[Draaiboek](./docs/draaiboek.md)** — het stramien van één avond, minuut-tot-minuut (±8 personen, 6 stops).
+- **[Spel](./docs/spel.md)** — de uilen-quizspeurtocht met printbare scorekaart.
+- **[Factcheck](./docs/factcheck.md)** — controle van de feitelijke claims op de site, met bronnen.
 
 ### Vereisten voor Organisatoren
 
@@ -81,7 +90,6 @@ Wil je deze activiteit zelf organiseren? Alle benodigde materialen en instructie
 In de [`3d/`](./3d/) directory vind je:
 
 - `NFC-label-example.stl` - Basis 3D-model voor NFC-tags
-- `NFC-label-example-with-NFC-hole.3mf` - Model met NFC-chip ruimte
 
 **Benodigde materialen:**
 

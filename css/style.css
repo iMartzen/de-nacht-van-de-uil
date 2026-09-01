@@ -156,6 +156,20 @@ body {
   background: linear-gradient(135deg, var(--card) 0%, var(--bg) 100%);
 }
 
+/* Filled accent-2 button variant (used for the active play/story state) */
+.btn-outline-accent-2 {
+  --bs-btn-color: var(--bg);
+  --bs-btn-bg: var(--accent-2);
+  --bs-btn-border-color: var(--accent-2);
+  --bs-btn-hover-color: var(--bg);
+  --bs-btn-hover-bg: var(--accent);
+  --bs-btn-hover-border-color: var(--accent);
+  --bs-btn-focus-shadow-rgb: 31, 223, 143;
+  --bs-btn-active-color: var(--bg);
+  --bs-btn-active-bg: var(--accent);
+  --bs-btn-active-border-color: var(--accent);
+}
+
 /* Audio player */
 .audio-player .btn {
   min-width: 120px;
@@ -163,6 +177,21 @@ body {
 
 .audio-player .btn:disabled {
   opacity: 0.6;
+}
+
+/* Story narration (per-stop text-to-speech) */
+.story-section .btn {
+  min-width: 120px;
+}
+
+.owl-story {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--fg);
+}
+
+.owl-story p:last-child {
+  margin-bottom: 0;
 }
 
 /* Navigation */
