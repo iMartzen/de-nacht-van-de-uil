@@ -194,6 +194,80 @@ body {
   margin-bottom: 0;
 }
 
+/* Quiz speurtocht */
+.quiz-options {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.quiz-option {
+  text-align: left;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  color: var(--fg);
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.quiz-option:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.quiz-option:disabled {
+  cursor: default;
+  opacity: 0.85;
+}
+
+.quiz-option-correct {
+  border-color: var(--accent) !important;
+  background-color: rgba(31, 223, 143, 0.15) !important;
+  color: var(--fg) !important;
+  opacity: 1;
+}
+
+.quiz-option-wrong {
+  border-color: #e0564f !important;
+  background-color: rgba(224, 86, 79, 0.12) !important;
+}
+
+.quiz-feedback {
+  min-height: 1.5rem;
+  margin-top: 0.75rem;
+}
+
+.quiz-feedback-good {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Code word progress (home) */
+.codeword-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 3.25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  background-color: var(--bg);
+}
+
+.codeword-slot.filled {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.codeword-complete .codeword-slot {
+  border-color: var(--accent);
+}
+
 /* Navigation */
 .navbar-brand {
   font-size: 1.5rem;

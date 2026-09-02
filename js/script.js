@@ -98,7 +98,32 @@ const UilenApp = {
     await this.loadHeaderAndFooter();
     this.initAudioPlayer();
     this.initStoryNarration();
+    this.initQuiz();
+    this.initCodeword();
     this.initMobileMenu();
+  },
+
+  // Owl stop order; the earned letters spell the code word (SNAVEL)
+  OWL_ORDER: ["steenuil", "kerkuil", "bosuil", "velduil", "ransuil", "oehoe"],
+  STORAGE_KEY: "nvdu-letters",
+
+  // Read/write the collected letters. localStorage may be blocked (private
+  // mode); degrade gracefully so a single page still works, only without
+  // cross-page progress.
+  readLetters() {
+    try {
+      return JSON.parse(localStorage.getItem(this.STORAGE_KEY)) || {};
+    } catch (e) {
+      return {};
+    }
+  },
+  writeLetters(obj) {
+    try {
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(obj));
+      return true;
+    } catch (e) {
+      return false;
+    }
   },
 
   // Get current page identifier
@@ -260,7 +285,27 @@ const UilenApp = {
       return;
     }
 
-    const text = storyEl.textContent.replace(/\s+/g, " ").trim();
+    const clean = (s) => (s || "").replace(/\s+/g, " ").trim();
+
+    // The narration weaves the story together with the quiz question and its
+    // three options (without revealing which is correct), so the whole stop can
+    // be experienced hands-free in the dark. The visible elements are the single
+    // source of truth for the spoken text.
+    let text = clean(storyEl.textContent);
+    const quizSection = document.querySelector(".quiz-section");
+    if (quizSection) {
+      const question = clean(
+        quizSection.querySelector(".quiz-question")?.textContent
+      );
+      const options = [...quizSection.querySelectorAll(".quiz-option")]
+        .map((b) => clean(b.textContent))
+        .filter(Boolean);
+      if (question) text += " De vraag: " + question;
+      if (options.length) {
+        text += " Je kunt kiezen uit: " + options.join("; ") + ".";
+      }
+    }
+
     if (!text) {
       button.classList.add("d-none");
       return;
@@ -345,6 +390,106 @@ const UilenApp = {
     const stopNarration = () => synth.cancel();
     window.addEventListener("beforeunload", stopNarration);
     window.addEventListener("pagehide", stopNarration);
+  },
+
+  // Quiz per owl stop: tap the right answer to earn this stop's letter.
+  initQuiz() {
+    const section = document.querySelector(".quiz-section");
+    if (!section) return;
+
+    const owl = section.getAttribute("data-owl");
+    const letter = section.getAttribute("data-letter");
+    const options = [...section.querySelectorAll(".quiz-option")];
+    const feedback = section.querySelector(".quiz-feedback");
+    if (!owl || !letter || options.length === 0) return;
+
+    const markSolved = () => {
+      options.forEach((btn) => {
+        btn.disabled = true;
+        if (btn.dataset.correct === "true") {
+          btn.classList.add("quiz-option-correct");
+        }
+      });
+      if (feedback) {
+        feedback.classList.add("quiz-feedback-good");
+        feedback.textContent = `Goed onthouden! Je verdient de letter ${letter}. Terug op de startpagina groeit je codewoord.`;
+      }
+    };
+
+    if (this.readLetters()[owl]) markSolved();
+
+    options.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (btn.disabled) return;
+        if (btn.dataset.correct === "true") {
+          const letters = this.readLetters();
+          letters[owl] = letter;
+          this.writeLetters(letters);
+          markSolved();
+        } else {
+          btn.classList.add("quiz-option-wrong");
+          if (feedback) {
+            feedback.classList.remove("quiz-feedback-good");
+            feedback.textContent =
+              "Nog niet. Luister het verhaal nog eens en probeer opnieuw.";
+          }
+        }
+      });
+    });
+  },
+
+  // Home page: show the collected letters and reveal the code word at 6/6.
+  initCodeword() {
+    const container = document.getElementById("codeword");
+    if (!container) return;
+
+    const slotsEl = container.querySelector(".codeword-slots");
+    const messageEl = container.querySelector(".codeword-message");
+    const resetBtn = container.querySelector(".codeword-reset");
+    if (!slotsEl) return;
+
+    const render = () => {
+      const letters = this.readLetters();
+      const frag = document.createDocumentFragment();
+      let count = 0;
+
+      this.OWL_ORDER.forEach((owl) => {
+        const slot = document.createElement("span");
+        slot.className = "codeword-slot";
+        const l = letters[owl];
+        if (l) {
+          slot.textContent = l;
+          slot.classList.add("filled");
+          count++;
+        } else {
+          slot.textContent = "?";
+        }
+        frag.appendChild(slot);
+      });
+      slotsEl.replaceChildren(frag);
+
+      const total = this.OWL_ORDER.length;
+      if (messageEl) {
+        if (count === 0) {
+          messageEl.textContent =
+            "Scan bij elke uil de tag, beantwoord de vraag en verzamel de letters.";
+        } else if (count < total) {
+          messageEl.textContent = `Je hebt ${count} van de ${total} letters. Ga zo door!`;
+        } else {
+          messageEl.textContent =
+            "Compleet! Het codewoord is SNAVEL — de snavel van de uil. 🦉";
+        }
+      }
+      container.classList.toggle("codeword-complete", count === total);
+    };
+
+    render();
+    if (resetBtn) {
+      resetBtn.addEventListener("click", () => {
+        this.writeLetters({});
+        render();
+      });
+    }
   },
 
   // Handle mobile menu

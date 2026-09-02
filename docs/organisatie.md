@@ -57,7 +57,8 @@ rustig voor mens én dier.
 **Op de basis**
 
 - Warme drank (thee/chocolademelk) en iets kleins te eten — belangrijk in november.
-- Scorekaarten + pen voor de quiz ([`spel.md`](./spel.md)), eventueel een klein prijsje.
+- Het spel loopt digitaal op de telefoon ([`spel.md`](./spel.md)); eventueel een klein prijsje voor
+  wie het codewoord compleet heeft.
 - EHBO-setje; opgeladen telefoon van de begeleiders.
 - Optioneel educatief materiaal: opgezette uil of uilenballen (braakballen) om te laten zien/pluizen.
 
@@ -84,14 +85,14 @@ rustig voor mens én dier.
 **Dag ervoor**
 
 - [ ] Alle tags nog eens testen op 2 telefoons.
-- [ ] Warme drank, scorekaarten, EHBO, reserve-oortjes, powerbank klaarleggen.
+- [ ] Warme drank, EHBO, reserve-oortjes, powerbank klaarleggen.
 - [ ] Weersverwachting checken; bij storm/onweer uitwijkdatum overwegen.
 
 **Op de dag**
 
 - [ ] Route uitzetten en plaatjes ophangen (bij daglicht) op korte afstand rondom de basis.
 - [ ] Padmarkering plaatsen.
-- [ ] Basis inrichten (drank, verwelkoming, scorekaarten).
+- [ ] Basis inrichten (drank, verwelkoming); op de startpagina de quizvoortgang resetten.
 - [ ] Laatste looptest van de hele route in het donker.
 
 **Na afloop**

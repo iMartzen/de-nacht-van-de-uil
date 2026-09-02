@@ -21,7 +21,9 @@ codewoord, zie [`spel.md`](./spel.md).
 - Verwelkom de deelnemers op de basis met een warme drank.
 - Check: **telefoon opgeladen? oortjes mee?** Deel reserve-oortjes/powerbank uit waar nodig.
 - Laat iedereen alvast de startpagina van de site openen (of de eerste QR scannen als test).
-- Deel de **scorekaart** en een pen uit ([`spel.md`](./spel.md)).
+- Wijs op het spel: bij elke uil is er een vraag; de letters verschijnen vanzelf onder *"Jouw
+  codewoord"* op de startpagina ([`spel.md`](./spel.md)). Begeleider: druk desgewenst eerst op
+  *"Opnieuw beginnen"* op de startpagina om een vorige groep te wissen.
 
 ## 0:10 — Introductie (10 min)
 
@@ -35,8 +37,9 @@ Vertel kort en enthousiast:
 - **Spelregels van de avond**: blijf op het pad, blijf bij de groep, **oortjes in**, scherm gedimd,
   geen felle lampen. Hoe stiller we zijn, hoe meer kans dat we een échte uil horen — vooral de bosuil
   roept in november veel.
-- **Het spel**: bij elke uil hoort een vraag; het juiste antwoord levert een letter op. Samen vormen
-  ze een geheim **codewoord** dat we aan het eind onthullen.
+- **Het spel**: bij elke uil hoort een vraag; het juiste antwoord op het scherm levert een letter op.
+  De letters verzamelen zich vanzelf en vormen een geheim **codewoord** dat je aan het eind op de
+  startpagina ziet verschijnen.
 
 ## 0:20 — De wandeling (45–55 min)
 
@@ -45,7 +48,8 @@ Loop de 6 stops in vaste volgorde. Reken op **±7–9 min per stop**. Vast ritme
 1. **Aankomen & scannen** — iedereen vindt het plaatje en scant de tag/QR (±1 min).
 2. **Verhaal** — laat het verhaaltje voorlezen (of lees mee), ~30–45 sec (±2 min met opstarten).
 3. **Roep** — speel de echte uilenroep af via oortjes (±1 min).
-4. **Vraag** — de gids leest de quizvraag voor; iedereen noteert de letter op de scorekaart (±2 min).
+4. **Vraag** — de voorleesstem stelt de vraag met de drie keuzes; iedereen tikt zijn antwoord op het
+   scherm en verdient de letter van deze uil (±2 min).
 5. **Even luisteren in stilte** — 30 sec écht stil: hoor je iets in het bos? (±1 min).
 6. **Doorlopen** naar het volgende plaatje op korte afstand.
 
@@ -66,8 +70,9 @@ Loop de 6 stops in vaste volgorde. Reken op **±7–9 min per stop**. Vast ritme
 ## ±1:10 — Afsluiting (15 min)
 
 - Terug op de basis: warme drank erbij.
-- Laat iedereen de 6 letters in volgorde voorlezen → onthul samen het **codewoord**
-  (antwoordsleutel in [`spel.md`](./spel.md)). Klein prijsje of applaus voor wie het goed had.
+- Laat iedereen op de **startpagina** onder *"Jouw codewoord"* kijken → daar staat het complete
+  **codewoord** (antwoordsleutel in [`spel.md`](./spel.md)). Klein prijsje of applaus voor wie het
+  compleet had.
 - Kort napraten: welke uil sprak het meest aan? Heeft iemand echt iets gehoord?
 - Bedank de deelnemers en wijs op de website om thuis nog eens te luisteren.
 

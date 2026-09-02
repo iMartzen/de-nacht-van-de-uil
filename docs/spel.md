@@ -1,98 +1,96 @@
 # Spel — de uilen-quizspeurtocht
 
-Een eenvoudig spel dat bij de wandeling hoort en in het donker werkt: bij elke uil-stop hoort **één
-vraag** met drie antwoorden. Elk antwoord heeft een **letter**. Wie het juiste antwoord kiest,
-noteert die letter. In de volgorde van de stops vormen de 6 letters samen een **codewoord**.
+Het spel zit **in de website en in het gesproken fragment** verweven. Bij elke uil-stop hoort één
+vraag met drie antwoorden. De voorleesstem leest het verhaal én de vraag met de drie keuzes voor;
+je tikt je antwoord op het scherm. Het juiste antwoord levert een **letter** op. De letters worden
+automatisch verzameld en op de **startpagina** samengevoegd tot een geheim **codewoord**.
 
-- Werkt low-tech: alleen een scorekaart en pen nodig — geen extra techniek.
-- De antwoorden staan in de verhaaltjes en op de uilpagina's, dus goed luisteren loont.
-- Leuk voor ±8 deelnemers: laat mensen in tweetallen overleggen, of ieder voor zich.
+## Hoe het werkt (voor de deelnemer)
 
-De gids leest de vraag en de drie opties voor bij elke stop. **Verklap de letters niet** — laat
-deelnemers zelf de goede kiezen.
+1. Scan bij een stop de tag → de uilpagina opent.
+2. Tik op **"Verhaal voorlezen"**: je hoort het verhaal, de vraag en de drie opties.
+3. Tik op het antwoord dat je denkt dat goed is.
+   - **Goed** → je verdient de letter van deze uil; de knoppen kleuren groen.
+   - **Fout** → je krijgt een hint en mag opnieuw proberen.
+4. Ga naar de volgende uil. Aan het eind kijk je op de **startpagina** onder *"Jouw codewoord"* welk
+   woord je bij elkaar hebt gespeurd.
+
+De voortgang wordt op je eigen telefoon bewaard (in de browser), dus je codewoord blijft staan terwijl
+je van uil naar uil loopt. Op de startpagina staat ook een knop **"Opnieuw beginnen"** om te wissen —
+handig voor de begeleider tussen groepjes door.
+
+> **Techniek:** het spel draait volledig in de browser (geen account, geen internetdatabase). De
+> voortgang staat in `localStorage`. In een enkele privé-/incognitomodus kan dat geblokkeerd zijn;
+> dan werkt de vraag nog wel per pagina, maar wordt het codewoord niet onthouden.
 
 ---
 
-## De vragen
+## De vragen en antwoorden (voor de begeleider)
 
-### Stop 1 — Steenuil
+Het juiste antwoord staat met ✅ gemarkeerd, met de letter die het oplevert.
+
+### Stop 1 — Steenuil → **S**
 **Waarom beschermen wij de steenuil hier met nestkasten?**
-- **S** — Omdat het niet vanzelf goed met hem gaat; hij staat op de Rode Lijst. ✅
-- **P** — Omdat hij 's nachts te hard roept.
-- **K** — Omdat hij te groot wordt voor het bos.
+- Omdat hij 's nachts te hard roept.
+- Omdat hij te groot wordt voor het bos.
+- ✅ Omdat het niet vanzelf goed met hem gaat; hij staat op de Rode Lijst.
 
-### Stop 2 — Kerkuil
+### Stop 2 — Kerkuil → **N**
 **Wat maakt de vlucht van de kerkuil zo bijzonder?**
-- **T** — Hij vliegt razendsnel.
-- **N** — Hij vliegt volkomen geluidloos. ✅
-- **R** — Hij vliegt alleen overdag.
+- Hij vliegt razendsnel.
+- ✅ Hij vliegt volkomen geluidloos.
+- Hij vliegt alleen overdag.
 
-### Stop 3 — Bosuil
+### Stop 3 — Bosuil → **A**
 **Welk geluid hoor je van de bosuil?**
-- **O** — Een schril gekrijs.
-- **A** — Het bekende 'hoe-hoe-hoehoe'. ✅
-- **E** — Een diep 'oe-hoe' (let op: dat is juist de oehoe!).
+- ✅ Het bekende 'hoe-hoe-hoehoe'.
+- Een schril gekrijs.
+- Een diep 'oe-hoe' (let op: dat is juist de oehoe!).
 
-### Stop 4 — Velduil
+### Stop 4 — Velduil → **V**
 **Waar en wanneer jaagt de velduil het liefst?**
-- **V** — Laag over open velden en duinen, vaak ook overdag. ✅
-- **S** — Hoog in dichte bossen, alleen 's nachts.
-- **M** — In schuren en kerken.
+- Hoog in dichte bossen, alleen 's nachts.
+- ✅ Laag over open velden en duinen, vaak ook overdag.
+- In schuren en kerken.
 
-### Stop 5 — Ransuil
+### Stop 5 — Ransuil → **E**
 **Wat zijn de 'oortjes' van de ransuil eigenlijk?**
-- **I** — Zijn echte oren.
-- **E** — Sierveren die helpen bij camouflage. ✅
-- **A** — Antennes om beter te horen.
+- Zijn echte oren.
+- Antennes om beter te horen.
+- ✅ Sierveren die helpen bij camouflage.
 
-### Stop 6 — Oehoe
+### Stop 6 — Oehoe → **L**
 **Wat is waar over de oehoe?**
-- **L** — De grootste uil van Europa, sinds 1997 weer in Nederland. ✅
-- **B** — De kleinste uil van Nederland.
-- **D** — Een uil die alleen overdag jaagt.
+- De kleinste uil van Nederland.
+- ✅ De grootste uil van Europa, sinds 1997 weer in Nederland.
+- Een uil die alleen overdag jaagt.
 
 ---
 
-## Antwoordsleutel (voor de begeleider)
+## Antwoordsleutel
 
 Juiste letters in stopvolgorde: **S · N · A · V · E · L**
 
 ### 👉 Codewoord: **SNAVEL**
 
-> Toepasselijk: een snavel is de "neus-en-mond" van de uil. Sluit de avond af met de vraag of iemand
-> nog weet welke uil de grootste snavel heeft (de oehoe!).
+> Toepasselijk: een snavel hoort bij elke uil. Sluit af met de vraag of iemand nog weet welke uil de
+> grootste snavel heeft (de oehoe!).
 
 ---
 
-## Scorekaart (om te printen)
+## De vragen aanpassen
 
-Print één per deelnemer of per tweetal.
+De vragen staan in de uilpagina's (`uilen/<soort>.html`) in een `.quiz-section`-blok:
 
-```
-DE NACHT VAN DE UIL — SPEURKAART
+- `data-owl` = de uil, `data-letter` = de letter die deze stop oplevert.
+- Elke `.quiz-option` is een antwoord; het juiste heeft `data-correct="true"`.
 
-Naam: __________________________
-
-Noteer bij elke stop de letter van het juiste antwoord.
-
-  Stop 1  Steenuil   ▢
-  Stop 2  Kerkuil    ▢
-  Stop 3  Bosuil     ▢
-  Stop 4  Velduil    ▢
-  Stop 5  Ransuil    ▢
-  Stop 6  Oehoe      ▢
-
-Zet de 6 letters op volgorde. Welk codewoord komt eruit?
-
-  __ __ __ __ __ __
-
-Ingeleverd bij de finish?  ▢
-```
+Wil je een ander codewoord? Pas dan per pagina de `data-letter` aan (in stopvolgorde
+steenuil → kerkuil → bosuil → velduil → ransuil → oehoe) en werk deze antwoordsleutel bij. De
+voorleesstem en de homepage-onthulling werken automatisch mee, want die lezen dezelfde gegevens.
 
 ## Varianten
 
-- **Makkelijker (kinderen)**: verklap dat het codewoord een lichaamsdeel van de uil is (6 letters).
-- **Moeilijker**: geen letters vooraf; deelnemers schrijven zelf het antwoord op en de gids geeft aan
-  het eind de letters — daarna puzzelen ze het woord.
-- **Later uit te breiden**: de vraag ook op de uilpagina zelf tonen (kleine toevoeging in de site);
-  voor de pilot is de papieren kaart bewust gekozen omdat die in het donker het betrouwbaarst is.
+- **Makkelijker (kinderen)**: verklap dat het codewoord bij de uil hoort en 6 letters heeft.
+- **Zonder telefoon**: kan de begeleider de vragen hardop stellen en de letters op een briefje laten
+  verzamelen; de antwoordsleutel hierboven volstaat.
