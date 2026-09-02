@@ -481,6 +481,15 @@ const UilenApp = {
         }
       }
       container.classList.toggle("codeword-complete", count === total);
+
+      if (count === total) {
+        if (!this._celebrated) {
+          this._celebrated = true;
+          this.celebrate();
+        }
+      } else {
+        this._celebrated = false; // re-arm so a fresh completion celebrates again
+      }
     };
 
     render();
@@ -490,6 +499,64 @@ const UilenApp = {
         render();
       });
     }
+  },
+
+  // Short, self-contained confetti burst (no external library). Honors
+  // prefers-reduced-motion: skips the animation entirely if requested.
+  celebrate() {
+    const reduce =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
+
+    const canvas = document.createElement("canvas");
+    canvas.className = "confetti-canvas";
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext("2d");
+    if (!ctx) {
+      canvas.remove();
+      return;
+    }
+
+    const colors = ["#1fdf8f", "#0fbf6a", "#e9f5ee", "#ffd166", "#a7c7b5"];
+    const pieces = Array.from({ length: 140 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * -canvas.height,
+      w: 6 + Math.random() * 6,
+      h: 8 + Math.random() * 8,
+      color: colors[(Math.random() * colors.length) | 0],
+      vy: 2 + Math.random() * 3,
+      vx: -1.5 + Math.random() * 3,
+      rot: Math.random() * Math.PI,
+      vrot: -0.2 + Math.random() * 0.4,
+    }));
+
+    const duration = 2600;
+    const start = performance.now();
+
+    const frame = (now) => {
+      const elapsed = now - start;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      pieces.forEach((p) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.rot += p.vrot;
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.restore();
+      });
+      if (elapsed < duration) {
+        requestAnimationFrame(frame);
+      } else {
+        canvas.remove();
+      }
+    };
+    requestAnimationFrame(frame);
   },
 
   // Handle mobile menu
